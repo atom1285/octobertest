@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Student
+
+# Model Form Field configuration
+form: $/atom/students/models/student/fields.yaml
+
+# Model Class name
+modelClass: Atom\Students\Models\Student
+
+# Default redirect location
+defaultRedirect: atom/students/students
+
+# Create page
+create:
+    title: Create Student
+    redirect: atom/students/students/update/:id
+    redirectClose: atom/students/students
+
+# Update page
+update:
+    title: Edit Student
+    redirect: atom/students/students
+    redirectClose: atom/students/students
+
+# Preview page
+preview:
+    title: Preview Student

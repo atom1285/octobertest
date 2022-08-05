@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Face Recognition Controller
+
+# Model Form Field configuration
+form: $/atom/facerecognition/models/facerecognitioncontroller/fields.yaml
+
+# Model Class name
+modelClass: Atom\FaceRecognition\Models\FaceRecognitionController
+
+# Default redirect location
+defaultRedirect: atom/facerecognition/facerecognitioncontroller
+
+# Create page
+create:
+    title: Create Face Recognition Controller
+    redirect: atom/facerecognition/facerecognitioncontroller/update/:id
+    redirectClose: atom/facerecognition/facerecognitioncontroller
+
+# Update page
+update:
+    title: Edit Face Recognition Controller
+    redirect: atom/facerecognition/facerecognitioncontroller
+    redirectClose: atom/facerecognition/facerecognitioncontroller
+
+# Preview page
+preview:
+    title: Preview Face Recognition Controller

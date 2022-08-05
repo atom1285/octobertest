@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Task
+
+# Model Form Field configuration
+form: $/tracker/task/models/task/fields.yaml
+
+# Model Class name
+modelClass: Tracker\Task\Models\Task
+
+# Default redirect location
+defaultRedirect: tracker/task/tasks
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: tracker/task/tasks/update/:id
+    redirectClose: tracker/task/tasks
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: tracker/task/tasks
+    redirectClose: tracker/task/tasks
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

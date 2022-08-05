@@ -1,0 +1,15 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+    user_id:
+        label: user ID
+    name:
+        label: Meno
+        searchable: true
+    arrival_date:
+        label: Čas príchodu
+        default: No recorded arrival

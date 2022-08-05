@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Meno
+        placeholder: Meno
+        required: true
+        span: left
+    arrival_date:
+        label: Čas príchodu
+        type: datepicker
+        default: now
+        readOnly: true
+        span: left
+
