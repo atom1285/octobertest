@@ -3,6 +3,10 @@
 # ===================================
 
 fields:
+    user_id:
+        label: User ID
+        span: left
+        comment: placeholder until relations, !!!prototype
     name:
         label: Meno
         placeholder: Meno

@@ -1,11 +1,16 @@
 <?php
 
 use Atom\Students\Models\Student;
+use Atom\Students\Http\Resources\UserResource;
 
 Route::get('/api/hello', function() {
 
     return 'hello world';
 
+});
+
+Route::get('/api/test/{id}', function($id) {
+    return new UserResource(Student::findOrFail($id));
 });
 
 Route::get('/api/get/students', function() {
@@ -34,7 +39,7 @@ Route::get('/api/get/my', function() {
 
     // return \Atom\Students\Models\Student::where('user_id', input('user_id'));
 
-    $arrivals = \Atom\Students\Models\Student::where('user_id', input('user_id'))
+    $arrivals = Student::where('user_id', input('user_id'))
     ->orderBy('id')
     ->get();
 
