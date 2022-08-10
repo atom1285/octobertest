@@ -15,6 +15,7 @@ class UserResource extends JsonResource
     {
         return [
             'id' => $this->user_id,
+            'user_id' => $this->id
         ];
     }
 }

@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/tracker/task/models/task/columns.yaml
+list: $/atom/shoppinglist/models/item/columns.yaml
 
 # Model Class name
-modelClass: Tracker\Task\Models\Task
+modelClass: Atom\ShoppingList\Models\Item
 
 # List Title
-title: Manage Tasks
+title: Manage Items
 
 # Link URL for each record
-recordUrl: tracker/task/tasks/update/:id
+recordUrl: atom/shoppinglist/items/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

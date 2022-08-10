@@ -1,23 +1,25 @@
-<?php namespace Tracker\Task\Updates;
+<?php namespace Atom\ShoppingList\Updates;
 
 use Schema;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
 
-class CreateTasksTable extends Migration
+class CreateItemsTable extends Migration
 {
     public function up()
     {
-        Schema::create('tracker_task_tasks', function (Blueprint $table) {
+        Schema::create('atom_shoppinglist_items', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
+            $table->integer('quantity');
+            $table->string('unit');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('tracker_task_tasks');
+        Schema::dropIfExists('atom_shoppinglist_items');
     }
 }

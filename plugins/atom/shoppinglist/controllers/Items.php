@@ -1,12 +1,12 @@
-<?php namespace Tracker\Task\Controllers;
+<?php namespace Atom\ShoppingList\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
 
 /**
- * Tasks Back-end Controller
+ * Items Back-end Controller
  */
-class Tasks extends Controller
+class Items extends Controller
 {
     /**
      * @var array Behaviors that are implemented by this controller.
@@ -30,6 +30,6 @@ class Tasks extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Tracker.Task', 'task', 'tasks');
+        BackendMenu::setContext('Atom.ShoppingList', 'shoppinglist', 'items');
     }
 }

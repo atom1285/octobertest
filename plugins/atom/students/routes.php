@@ -3,23 +3,20 @@
 use Atom\Students\Models\Student;
 use Atom\Students\Http\Resources\UserResource;
 
-Route::get('/api/hello', function() {
+
+Route::get('/api/hello', function() { // * DEBUG
 
     return 'hello world';
 
 });
 
-Route::get('/api/test/{id}', function($id) {
-    return new UserResource(Student::findOrFail($id));
-});
-
-Route::get('/api/get/students', function() {
+Route::get('/api/get/students', function() { // * returns all arrivals
 
     return \Atom\Students\Models\Student::all();
-
+    
 });
-
-Route::get('/api/add/student', function() {
+    
+Route::get('/api/add/student', function() { // * adds a student, expects 'name' and 'user_id'
 
     date_default_timezone_set('Europe/Bratislava');
     $datetime = date('Y-m-d H:i:s'); 
@@ -32,16 +29,13 @@ Route::get('/api/add/student', function() {
     return ('Príchod zaevidovaný');
 });
 
-Route::get('/api/get/my', function() {
-    //expecting user_id
-    
-    // return input('user_id');
-
-    // return \Atom\Students\Models\Student::where('user_id', input('user_id'));
+Route::get('/api/get/my', function() { // * returns arrivals of the current logged in user, temporary: expecting user_id
 
     $arrivals = Student::where('user_id', input('user_id'))
     ->orderBy('id')
-    ->get();
+    ->firstOrFail();
+
+    Event::fire('API:ownArrivalsReq'); // * fire custom event, event not used anywhere
 
     return $arrivals;
 

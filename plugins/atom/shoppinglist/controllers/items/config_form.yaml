@@ -3,28 +3,28 @@
 # ===================================
 
 # Record name
-name: Task
+name: Item
 
 # Model Form Field configuration
-form: $/tracker/task/models/task/fields.yaml
+form: $/atom/shoppinglist/models/item/fields.yaml
 
 # Model Class name
-modelClass: Tracker\Task\Models\Task
+modelClass: Atom\ShoppingList\Models\Item
 
 # Default redirect location
-defaultRedirect: tracker/task/tasks
+defaultRedirect: atom/shoppinglist/items
 
 # Create page
 create:
     title: backend::lang.form.create_title
-    redirect: tracker/task/tasks/update/:id
-    redirectClose: tracker/task/tasks
+    redirect: atom/shoppinglist/items/update/:id
+    redirectClose: atom/shoppinglist/items
 
 # Update page
 update:
     title: backend::lang.form.update_title
-    redirect: tracker/task/tasks
-    redirectClose: tracker/task/tasks
+    redirect: atom/shoppinglist/items
+    redirectClose: atom/shoppinglist/items
 
 # Preview page
 preview:

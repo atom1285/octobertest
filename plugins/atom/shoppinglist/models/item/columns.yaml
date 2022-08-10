@@ -3,9 +3,9 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
-        searchable: true
     name:
-        label: Meno
-
+        label: Položka
+    quantity:
+        label: Počet/Množstvo
+    unit:
+        label: JednotkaS

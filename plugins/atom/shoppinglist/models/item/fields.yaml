@@ -1,0 +1,17 @@
+fields:
+    name:
+        label: Položka
+        type: text
+    quantity:
+        label: Počet/Množstvo
+        type: number
+        size: small
+    unit:
+        label: Jednotka
+        type: dropdown
+        default: ks
+        options:
+            ks: Ks
+            kg: Kg
+            l: L
+            g: g

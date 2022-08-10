@@ -1,10 +1,10 @@
-<?php namespace Tracker\Task;
+<?php namespace Atom\ShoppingList;
 
 use Backend;
 use System\Classes\PluginBase;
 
 /**
- * task Plugin Information File
+ * ShoppingList Plugin Information File
  */
 class Plugin extends PluginBase
 {
@@ -16,9 +16,9 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'task',
+            'name'        => 'ShoppingList',
             'description' => 'No description provided yet...',
-            'author'      => 'tracker',
+            'author'      => 'atom',
             'icon'        => 'icon-leaf'
         ];
     }
@@ -53,7 +53,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'Tracker\Task\Components\MyComponent' => 'myComponent',
+            'Atom\ShoppingList\Components\MyComponent' => 'myComponent',
         ];
     }
 
@@ -67,8 +67,8 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'tracker.task.some_permission' => [
-                'tab' => 'task',
+            'atom.shoppinglist.some_permission' => [
+                'tab' => 'ShoppingList',
                 'label' => 'Some permission'
             ],
         ];
@@ -81,14 +81,13 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
 
         return [
-            'task' => [
-                'label'       => 'task',
-                'url'         => Backend::url('tracker/task/tasks'),
+            'shoppinglist' => [
+                'label'       => 'ShoppingList',
+                'url'         => Backend::url('atom/shoppinglist/items'),
                 'icon'        => 'icon-leaf',
-                'permissions' => ['tracker.task.*'],
+                'permissions' => ['atom.shoppinglist.*'],
                 'order'       => 500,
             ],
         ];

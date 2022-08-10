@@ -1,18 +1,18 @@
-<?php namespace Tracker\Task\Models;
+<?php namespace Atom\ShoppingList\Models;
 
 use Model;
 
 /**
- * task Model
+ * Item Model
  */
-class Task extends Model
+class Item extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'tracker_task_tasks';
+    public $table = 'atom_shoppinglist_items';
 
     /**
      * @var array Guarded fields
@@ -71,6 +71,4 @@ class Task extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
-
 }
-
