@@ -2,16 +2,17 @@ fields:
     name:
         label: Položka
         type: text
+        required: true
     quantity:
         label: Počet/Množstvo
         type: number
-        size: small
+        required: true
     unit:
         label: Jednotka
         type: dropdown
-        default: ks
+        default: none
         options:
             ks: Ks
-            kg: Kg
-            l: L
-            g: g
+            kg: Kilogram
+            l: Liter
+            g: Gram

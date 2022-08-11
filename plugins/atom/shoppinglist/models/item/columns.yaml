@@ -3,9 +3,11 @@
 # ===================================
 
 columns:
+    id:
+        label: ID
     name:
         label: Položka
     quantity:
         label: Počet/Množstvo
     unit:
-        label: JednotkaS
+        label: Jednotka
