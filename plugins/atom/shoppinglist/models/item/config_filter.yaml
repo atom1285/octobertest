@@ -1,0 +1,9 @@
+// * LIST FILTER CONFING FILE
+
+scopes:
+
+    done:
+      label: Is done
+      type: checkbox
+      default: 0
+      conditions: done = true   
