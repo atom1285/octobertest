@@ -14,6 +14,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->integer('quantity');
             $table->string('unit');
+            $table->boolean('done');
             $table->timestamps();
         });
     }
