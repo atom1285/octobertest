@@ -1,6 +1,7 @@
 # ===================================
 #  List Column Definitions
 # ===================================
+filter: config_filter.yaml
 
 columns:
     id:
@@ -11,3 +12,5 @@ columns:
         label: Počet/Množstvo
     unit:
         label: Jednotka
+    done:  
+        label: Dokončené

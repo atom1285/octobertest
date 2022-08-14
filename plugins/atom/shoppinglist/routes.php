@@ -14,11 +14,20 @@ Route::get('/api/sl/hello', function() {
 
 // * SELECTs
 
-// * returns all items
+// * returns all items {SelectType} = 'all'
+// * select NOT completed items {SelectType} = 'nc'
+
 Route::get('/api/sl/get/{SelectType}', function($SelectType) {
 
     if ( $SelectType == 'all' ) {
-        return \Atom\Students\Models\Student::all();
+        return Item::all();
+    }
+    else if ( $SelectType == 'nc' ) {
+        $items = Item::where('done', false)
+        ->orderBy('id')
+        ->firstOrFail();
+
+        return $items;
     }
     
 });
@@ -59,6 +68,17 @@ Route::post('api/sl/updt/{id}', function($id) {
 
     $item->save();
 
-    return 'item updated, ITEM: ' . $item ;
+    return 'item updated, ITEM: ' . $item;
 
 } );
+
+// * COMPLETE ITEM (set done to true)
+
+Route::post('api/sl/comp/{id}', function($id) {
+
+    $item = Item::find($id);
+    $item->done = true;
+    $item->save();
+
+    return 'item completed, ITEM: ' . $item;
+});
