@@ -16,7 +16,7 @@ Route::get('/api/get/students', function() { // * returns all arrivals
     
 });
     
-Route::get('/api/add/student', function() { // * adds a student, expects 'name' and 'user_id'
+    Route::get('/api/add/student', function() { // * adds a student, expects 'name' and 'user_id'
 
     date_default_timezone_set('Europe/Bratislava');
     $datetime = date('Y-m-d H:i:s'); 

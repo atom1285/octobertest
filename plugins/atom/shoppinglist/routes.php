@@ -23,16 +23,26 @@ Route::get('/api/sl/get/all', function() {
 
 
 // * select NOT completed items
-Route::get('/api/sl/get/all', function() {
+Route::get('/api/sl/get/nc', function() {
 
     $items = Item::where('done', false)
     ->orderBy('id')
-    ->firstOrFail();
+    ->get();
 
     return $items;
     
 });
 
+// * ADD ITEM --->> INSERT
+// !!! expecting  name(string), quantity(int), unit(string)
+Route::post('/api/sl/add', function() {
+    
+    $item = new Item;
+    $item->fill(post());
+    $item->save();
+
+    return $item->id;
+});
 
 // * DELETE
 
@@ -77,6 +87,8 @@ Route::post('api/sl/updt/{id}', function($id) {
 // * COMPLETE ITEM (set done to true)
 
 Route::post('api/sl/comp/{id}', function($id) {
+
+    // TODO: add a different response if item already completed
 
     $item = Item::find($id);
     $item->done = true;

@@ -22,7 +22,7 @@ class Item extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = ['name', 'quantity', 'unit'];
 
     /**
      * @var array Validation rules for attributes
