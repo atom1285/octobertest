@@ -1,7 +1,7 @@
 <?php
 
 use Atom\Shoppinglist\Models\Item;
-// use Atom\Shoppinglist\Http\Resources\UserResource;
+// use Atom\Shoppinglist\Http\Resources\UserResource; 
 
 // * DEBUG
 
@@ -14,23 +14,25 @@ Route::get('/api/sl/hello', function() {
 
 // * SELECTs
 
-// * returns all items {SelectType} = 'all'
-// * select NOT completed items {SelectType} = 'nc'
+// * select all items
+Route::get('/api/sl/get/all', function() {
 
-Route::get('/api/sl/get/{SelectType}', function($SelectType) {
+    return Item::all();
+     
+});
 
-    if ( $SelectType == 'all' ) {
-        return Item::all();
-    }
-    else if ( $SelectType == 'nc' ) {
-        $items = Item::where('done', false)
-        ->orderBy('id')
-        ->firstOrFail();
 
-        return $items;
-    }
+// * select NOT completed items
+Route::get('/api/sl/get/all', function() {
+
+    $items = Item::where('done', false)
+    ->orderBy('id')
+    ->firstOrFail();
+
+    return $items;
     
 });
+
 
 // * DELETE
 
