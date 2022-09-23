@@ -21,6 +21,13 @@ Route::get('/api/sl/get/all', function() {
      
 });
 
+// * select an item based on id
+Route::get('/api/sl/get/id/{id}', function($id) {
+
+    return Item::find($id);
+     
+});
+
 
 // * select NOT completed items
 Route::get('/api/sl/get/nc', function() {
@@ -41,7 +48,7 @@ Route::post('/api/sl/add', function() {
     $item->fill(post());
     $item->save();
 
-    return $item->id;
+    return $item;
 });
 
 // * DELETE
@@ -55,34 +62,18 @@ Route::delete('api/sl/del/{id}', function($id) {
 } );
 
 // * UPDATE
-
 Route::post('api/sl/updt/{id}', function($id) {
 
     $item = Item::find($id);
 
-    try {
-        switch (post('whatToUpdate')) {
-            case 'name':
-                $item->name = post('newValue');
-                break;
-            case 'quantity':
-                $item->quantity = post('newValue');
-                break;
-            case 'unit':
-                $item->unit = post('newValue');
-                break;
-            default:
-                echo "Wrong whatToUpdate entry";
-        }
-    } catch (Exception $e) {
-        return $e;
-    }
-
+    $item->name = post('name');
+    $item->quantity = post('quantity');
+    $item->unit = post('unit');
+    
     $item->save();
 
-    return 'item updated, ITEM: ' . $item;
-
-} );
+    return $item;
+});
 
 // * COMPLETE ITEM (set done to true)
 
