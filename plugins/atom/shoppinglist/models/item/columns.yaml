@@ -14,3 +14,7 @@ columns:
         label: Jednotka
     done:  
         label: Dokončené
+    extraInfo:
+        label: Extra Info 0/1
+    extraInfoText:
+        label: Extra Informácie

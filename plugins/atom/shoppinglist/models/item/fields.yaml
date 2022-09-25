@@ -16,3 +16,6 @@ fields:
             kg: Kilogram
             l: Liter
             g: Gram
+    extraInfoText:
+        label: Extra informácie
+        type: textarea

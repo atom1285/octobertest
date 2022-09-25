@@ -32,4 +32,15 @@ class Items extends Controller
 
         BackendMenu::setContext('Atom.ShoppingList', 'shoppinglist', 'items');
     }
+
+    public function formAfterSave($item) {
+        if ( strlen($item->extraInfoText) > 0 ) {
+            $item->extraInfo = true;
+            $item->save();
+        }
+        else {
+            $item->extraInfo = false;
+            $item->save();
+        }
+    }
 }
