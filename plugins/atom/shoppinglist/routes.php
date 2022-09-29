@@ -79,6 +79,17 @@ Route::post('api/sl/updt/{id}', function($id) {
     $item->name = post('name');
     $item->quantity = post('quantity');
     $item->unit = post('unit');
+    $item->extraInfo = post('extraInfo');
+    $item->extraInfoText = post('extraInfoText');
+
+
+    if ($item->extraInfo == 'on') {
+        $item->extraInfo = true;
+    }
+    else {
+        $item->extraInfo = false;
+        $item->extraInfoText = '';
+    }
     
     $item->save();
 
